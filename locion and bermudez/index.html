@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Lodezz.x: top up Robux, Mobile Legends Diamonds, Valorant Points and more for the games Filipinos play. Fast delivery and easy payments." />
+<meta name="theme-color" content="#050509" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lodezz.x: Your Game. Your Currency." />
+<meta property="og:description" content="Top up your favorite games quickly and easily with GCash, Maya, bank transfer, card or QR payment." />
+<meta name="twitter:card" content="summary" />
+<title>Lodezz.x — Your Game. Your Currency. Your Lodezz.x.</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22f%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%233B82F6%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%237C3AED%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%229%22%20fill=%22url%28%23f%29%22/%3E%3Cpath%20d=%22M10%207h4.2v13.6h8.3V25H10z%22%20fill=%22%230B0B12%22%20opacity=%22.35%22%20transform=%22translate%281.3%201.3%29%22/%3E%3Cpath%20d=%22M10%207h4.2v13.6h8.3V25H10z%22%20fill=%22%23fff%22/%3E%3Cpath%20d=%22M23.5%205l1.2%203.3%203.3%201.2-3.3%201.2-1.2%203.3-1.2-3.3-3.3-1.2%203.3-1.2z%22%20fill=%22%23FBBF24%22/%3E%3C/svg%3E" />
+<script>try{var t=localStorage.getItem("owt_theme");if(t)document.documentElement.setAttribute("data-theme",t);var a=localStorage.getItem("owt_accent");if(a)document.documentElement.setAttribute("data-accent",a);}catch(e){}</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container nav-inner">
+    <button class="brand" data-action="goto" data-target="home" aria-label="Lodezz.x home">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Lodezz<span class="brand-dot">.x</span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <button data-action="goto" data-target="home">Home</button>
+      <button data-action="goto" data-target="games">Games</button>
+      <button data-action="goto" data-target="how">How It Works</button>
+      <button data-action="goto" data-target="faq">FAQ</button>
+      <button data-action="goto" data-target="support">Support</button>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn search-btn" data-action="focus-search" aria-label="Search"><span id="navsearch-icon"></span></button>
+      <button class="icon-btn theme-btn" id="theme-btn" data-action="toggle-theme" aria-label="Switch to light mode"></button>
+      <button class="icon-btn" id="cart-btn" data-action="open-cart" aria-label="Cart">
+        <span id="cart-icon"></span>
+        <span id="cart-count">0</span>
+      </button>
+      <button class="btn btn-ghost btn-sm login-btn" data-action="goto" data-target="login">Log In</button>
+      <div class="account-chip" id="account-chip" hidden>
+        <button class="account-name" id="account-name" data-action="open-account" aria-label="Open my account"></button>
+        <button class="btn btn-ghost btn-sm admin-link" data-action="goto" data-target="admin" hidden>Admin</button>
+        <button class="btn btn-ghost btn-sm" data-action="logout">Log Out</button>
+      </div>
+      <button class="btn btn-glow btn-sm shopnow-btn" data-action="goto" data-target="games">Shop Now</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" data-action="toggle-mobile" aria-label="Toggle menu"></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="link" data-action="goto" data-target="home">Home</button>
+    <button class="link" data-action="goto" data-target="games">Games</button>
+    <button class="link" data-action="goto" data-target="how">How It Works</button>
+    <button class="link" data-action="goto" data-target="faq">FAQ</button>
+    <button class="link" data-action="goto" data-target="support">Support</button>
+    <button class="link" id="theme-link-mobile" data-action="toggle-theme">Switch to light mode</button>
+    <div class="row" id="mobile-guest-row">
+      <button class="btn btn-ghost btn-flex btn-sm login-btn" data-action="goto" data-target="login">Log In</button>
+      <button class="btn btn-glow btn-flex btn-sm" data-action="goto" data-target="games">Shop Now</button>
+    </div>
+    <div class="row" id="mobile-user-row" hidden>
+      <button class="account-name" id="account-name-mobile" data-action="open-account" aria-label="Open my account"></button>
+      <button class="btn btn-ghost btn-sm admin-link" data-action="goto" data-target="admin" hidden>Admin</button>
+      <button class="btn btn-ghost btn-flex btn-sm" data-action="logout">Log Out</button>
+    </div>
+  </div>
+</header>
+
+<div id="announcement" class="announcement" role="status" hidden></div>
+
+<main>
+  <div class="page" data-page="home">
+    <section id="home" class="hero scroll-mt">
+      <div class="container hero-grid">
+        <div>
+          <h1>Game More. <span class="accent">Pay Less.</span></h1>
+          <p class="sub">Buy Robux, Mobile Legends Diamonds, game credits, and more — delivered quickly and securely.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-glow" data-action="goto" data-target="games">Browse Games <span id="arrow-icon"></span></button>
+            <button class="btn btn-ghost" data-action="goto" data-target="how">How It Works</button>
+          </div>
+          <div class="trust-grid" id="trust-grid"></div>
+        </div>
+        <div class="hero-visual" id="hero-visual"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head center"><h2>Why Lodezz.x</h2></div>
+        <div class="feat-grid" id="feat-grid"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="promo">
+          <div class="promo-inner">
+            <div class="deal-pill">
+              <span class="label">🔥 Flash Sale ends in</span>
+              <div class="countdown lg" data-countdown></div>
+            </div>
+            <h2>Ready to Power Up?</h2>
+            <p>Get your game currency without the hassle.</p>
+            <p class="promo-code-line" id="promo-code-line" hidden></p>
+            <button class="btn btn-glow" style="margin-top:24px;" data-action="goto" data-target="shop">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="games" hidden>
+    <section id="games" class="scroll-mt">
+      <div class="container">
+        <div class="games-head">
+          <div class="section-head" style="margin-bottom:0;">
+            <h2>Popular Games</h2>
+            <p>Top-up your favorite games in just a few clicks.</p>
+          </div>
+          <div class="deal-pill">
+            <span class="label">⚡ Deals end in</span>
+            <div class="countdown" data-countdown></div>
+          </div>
+        </div>
+        <div class="game-grid" id="game-grid"></div>
+      </div>
+    </section>
+
+    <section id="shop" class="scroll-mt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Marketplace</h2>
+          <p>Search, filter, and sort every package in one place.</p>
+        </div>
+        <div class="shop-controls">
+          <div class="search-wrap">
+            <span id="search-icon"></span>
+            <input id="search-input" type="text" list="search-suggestions" autocomplete="off" placeholder="Search games, credits, or packages…" aria-label="Search products" />
+            <datalist id="search-suggestions"></datalist>
+            <button type="button" class="search-clear" id="search-clear" data-action="clear-search" aria-label="Clear search" hidden>✕</button>
+          </div>
+          <div class="pill-row" id="game-filter-row"></div>
+          <div class="sort-row">
+            <div class="pill-row" id="price-filter-row"></div>
+            <select id="sort-select" aria-label="Sort products">
+              <option value="popular">Popular</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+              <option value="new">Newest</option>
+            </select>
+          </div>
+        </div>
+        <p class="result-count" id="result-count"></p>
+        <div id="product-grid-wrap"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="how" hidden>
+    <section id="how" class="scroll-mt">
+      <div class="container">
+        <div class="section-head center"><h2>How It Works</h2></div>
+        <div class="steps-grid" id="steps-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="faq" hidden>
+    <section id="faq" class="scroll-mt">
+      <div class="container faq-wrap">
+        <div class="section-head center"><h2>Frequently Asked Questions</h2></div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="support" hidden>
+    <section id="support" class="scroll-mt">
+      <div class="container">
+        <div class="support-card">
+          <span id="help-icon"></span>
+          <h2>Need Help?</h2>
+          <p>Need help? Please contact the site administrator for assistance.</p>
+          <div class="support-actions">
+            <button class="btn btn-ghost" data-action="goto" data-target="faq">View FAQ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="page" data-page="legal" hidden>
+    <section class="scroll-mt">
+      <div class="container" style="max-width:760px;">
+        <div class="legal-page" id="legal-content"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="admin" hidden>
+    <section class="scroll-mt">
+      <div class="container" style="max-width:1040px;">
+        <div id="admin-root"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="orders" hidden>
+    <section class="scroll-mt">
+      <div class="container" style="max-width:760px;">
+        <div class="section-head center">
+          <h2>My Orders</h2>
+          <p>Check the status of your top-ups here.</p>
+        </div>
+        <div class="orders-tools" id="orders-tools" hidden>
+          <input id="orders-search" type="text" placeholder="Search by order number, game or ID" aria-label="Search my orders" />
+          <select id="orders-status" aria-label="Filter orders by status">
+            <option value="all">All statuses</option><option value="processing">Processing</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <p class="muted orders-summary" id="orders-summary"></p>
+        <div class="orders-list" id="orders-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="prefs" hidden>
+    <section class="scroll-mt">
+      <div class="container">
+        <div class="section-head center">
+          <h2 id="prefs-title">Which of these games do you like?</h2>
+          <p>Tick every game you like before you start browsing. We will show your favorites first. You can change this later from your account.</p>
+        </div>
+        <div class="prefs-toolbar">
+          <span id="prefs-count">0 selected</span>
+          <button type="button" class="link-btn" data-action="prefs-all">Select all</button>
+          <button type="button" class="link-btn" data-action="prefs-none">Clear</button>
+        </div>
+        <div class="prefs-grid" id="prefs-grid"></div>
+        <p class="err-msg" role="alert" id="err-prefs" hidden style="text-align:center; margin-top:16px;"></p>
+        <div class="prefs-actions">
+          <button class="btn btn-ghost" id="prefs-cancel-btn" data-action="prefs-cancel" hidden>Cancel</button>
+          <button class="btn btn-glow" id="prefs-save-btn" data-action="prefs-save">Continue to the Website</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" data-page="login" hidden>
+    <section class="scroll-mt">
+      <div class="container" style="max-width:440px;">
+        <div class="auth-card">
+          <h2 id="auth-title">Log In</h2>
+          <p class="auth-sub" id="auth-sub">Welcome back! Enter your details to continue.</p>
+          <p class="auth-last" id="auth-last" hidden></p>
+
+          <div class="field" id="field-name" hidden>
+            <label for="auth-name">Full Name</label>
+            <input id="auth-name" type="text" placeholder="Juan Dela Cruz" />
+            <p class="err-msg" role="alert" id="err-name" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-identifier">Email or Username</label>
+            <input id="auth-identifier" type="text" placeholder="you@example.com" />
+            <p class="err-msg" role="alert" id="err-identifier" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-password">Password</label>
+            <div class="password-wrap">
+              <input id="auth-password" type="password" placeholder="Enter your password" />
+              <button type="button" class="toggle-pw" data-action="toggle-password" data-target="auth-password" aria-label="Show password"></button>
+            </div>
+            <p class="err-msg" role="alert" id="err-password" hidden></p>
+          </div>
+
+          <div class="field" id="field-confirm" hidden>
+            <label for="auth-confirm">Confirm Password</label>
+            <div class="password-wrap">
+              <input id="auth-confirm" type="password" placeholder="Re-enter your password" />
+              <button type="button" class="toggle-pw" data-action="toggle-password" data-target="auth-confirm" aria-label="Show password"></button>
+            </div>
+            <p class="err-msg" role="alert" id="err-confirm" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-payment">Payment Method</label>
+            <select id="auth-payment"></select>
+            <p class="field-note">This will be your default payment method. You can change it at checkout.</p>
+            <p class="err-msg" role="alert" id="err-payment" hidden></p>
+          </div>
+
+          <div class="auth-row">
+            <label class="check-row"><input type="checkbox" id="auth-remember" /> Remember this account</label>
+            <button type="button" class="link-btn" id="forgot-btn" data-action="forgot-password">Forgot Password?</button>
+          </div>
+
+          <p class="err-msg" role="alert" id="err-general" hidden></p>
+
+          <p class="auth-terms" id="auth-terms" hidden>By creating an account you agree to our <button type="button" class="link-btn" data-action="goto" data-target="terms">Terms &amp; Conditions</button> and <button type="button" class="link-btn" data-action="goto" data-target="privacy">Privacy Policy</button>.</p>
+
+          <button class="btn btn-glow btn-block" id="auth-submit-btn" data-action="auth-submit">Log In</button>
+
+          <p class="auth-switch">Don't have an account? <button type="button" class="link-btn" data-action="auth-toggle-mode">Create one</button></p>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="brand">
+        <span class="brand-mark" id="footer-mark"></span>
+        <span class="brand-name">Lodezz<span class="brand-dot">.x</span></span>
+      </div>
+      <p class="footer-tagline">Your Game. Your Currency. Your Lodezz.x.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul id="footer-games"></ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><button class="footer-link" data-action="goto" data-target="faq">FAQ</button></li>
+        <li><button class="footer-link" data-action="goto" data-target="how">How It Works</button></li>
+        <li><button class="footer-link" data-action="goto" data-target="support">Support</button></li>
+        <li><button class="footer-link" data-action="goto" data-target="orders">Track Order</button></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><button class="footer-link" data-action="goto" data-target="terms">Terms &amp; Conditions</button></li>
+        <li><button class="footer-link" data-action="goto" data-target="privacy">Privacy Policy</button></li>
+        <li><button class="footer-link" data-action="goto" data-target="refund">Refund Policy</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lodezz.x. All rights reserved.</p>
+    <p>Game names, logos, and trademarks belong to their respective owners. Lodezz.x is an independent digital marketplace and is not affiliated with Roblox, Moonton, Riot Games, HoYoverse, Activision, Garena, Krafton, Supercell, or any other game publisher.</p>
+  </div>
+</footer>
+
+<!-- Product detail modal -->
+<div class="overlay hidden" id="detail-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="detail-modal"></div>
+</div>
+
+<!-- Account window -->
+<div class="overlay hidden" id="account-overlay" role="dialog" aria-modal="true" aria-label="My account">
+  <div class="modal" id="account-modal"></div>
+</div>
+
+<!-- Cart drawer -->
+<div class="drawer-overlay" id="cart-overlay">
+  <div class="drawer-backdrop" data-action="close-cart"></div>
+  <div class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h3><span id="drawer-cart-icon"></span> Your Cart</h3>
+      <button class="icon-btn" style="width:32px;height:32px;" data-action="close-cart" aria-label="Close cart" id="close-cart-icon"></button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+    <div id="drawer-footer-wrap"></div>
+  </div>
+</div>
+
+<!-- Checkout modal -->
+<div class="checkout-overlay hidden" id="checkout-overlay" role="dialog" aria-modal="true" aria-label="Checkout">
+  <div class="checkout-modal" id="checkout-modal"></div>
+</div>
+
+<div class="toast-stack" id="toast-stack"></div>
+<div id="confetti-layer"></div>
+
+<script src="data.js" defer></script>
+<script src="script.js" defer></script>
+<script src="admin.js" defer></script>
+</body>
+</html>
